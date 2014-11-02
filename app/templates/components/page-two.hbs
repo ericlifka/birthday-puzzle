@@ -4,12 +4,16 @@
 
 <div class="container">
     <div class="month">
-
+        {{#each month in months}}
+            <button
+                {{action "selectMonth" month}}
+                {{bind-attr id=month}}></button>
+        {{/each}}
     </div>
     <div class="day">
-
+        <button></button>
     </div>
     <div class="year">
-
+        <button></button>
     </div>
 </div>
