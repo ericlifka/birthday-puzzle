@@ -1,4 +1,4 @@
-`import RejectionsMixin from 'BirthdayPuzzle/mixins/rejections'`
+`import RejectionsMixin from 'birthday-puzzle/mixins/rejections'`
 
 PageOneComponent = Ember.Component.extend RejectionsMixin,
     classNames: ['page-one']
@@ -13,6 +13,7 @@ PageOneComponent = Ember.Component.extend RejectionsMixin,
         ]
 
     currentQuestion: Ember.computed -> 'name'
+    inputError: Ember.computed -> '&nbsp;'
 
     showMessages: Ember.on 'didInsertElement', ->
         $pane = @$('.display-text')
@@ -40,18 +41,24 @@ PageOneComponent = Ember.Component.extend RejectionsMixin,
     actions:
         processInput: ->
             value = @get 'inputValue'
+            @set 'inputValue', ''
             switch @get 'currentQuestion'
                 when 'name' then @processNameInput value
 
     processNameInput: (name) ->
+        @clearError()
         switch name.toUpperCase()
-            when 'PETER' then @showMessage "No, that's your son"
-            when 'POOKUMS', 'POOKUS' then @showMessage "No, that's your nickname"
+            when 'PETER', 'CALVIN' then @showError "You aren't a baby"
+            when 'POOKUMS', 'POOKUS' then @showError "No, that's your nickname"
+            when 'ERIC' then @showError "No... That's me"
+            when 'MERLIN', 'WAFFLES' then @showError "That's your cat"
+            when 'MOLLY' then @showError "That's your puppy"
+            when 'FUZZBOT' then @showError "That's your bunny"
             when 'NICOLE' then @something()
-            else
-                @showMessage _.sample(@get 'rejections')
+            else @showError _.sample(@get 'rejections')
 
-    randomRejection: ->
+    clearError: -> @set 'inputError', '&nbsp;'
+    showError: (message) -> @set 'inputError', message
 
 
 `export default PageOneComponent`
