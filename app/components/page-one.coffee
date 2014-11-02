@@ -54,11 +54,24 @@ PageOneComponent = Ember.Component.extend RejectionsMixin,
             when 'MERLIN', 'WAFFLES' then @showError "That's your cat"
             when 'MOLLY' then @showError "That's your puppy"
             when 'FUZZBOT' then @showError "That's your bunny"
-            when 'NICOLE' then @sendAction()
+            when 'NICOLE' then @resolvePage()
             else @showError _.sample(@get 'rejections')
 
     clearError: -> @set 'inputError', '&nbsp;'
     showError: (message) -> @set 'inputError', message
 
+    resolvePage: ->
+        @$("form").hide()
+        @$('.display-text').addClass 'fadeout'
+        window.setTimeout =>
+            @set 'currentDisplay', "Good, now solve this puzzle"
+            @$('.display-text').removeClass 'fadeout'
+            window.setTimeout =>
+                @$('.display-text').addClass 'fadeout'
+            , 2000
+            window.setTimeout =>
+                @sendAction()
+            , 2500
+        , 1000
 
 `export default PageOneComponent`
