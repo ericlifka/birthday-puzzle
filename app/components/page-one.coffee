@@ -1,7 +1,7 @@
 PageOneComponent = Ember.Component.extend
     classNames: ['page-one']
 
-    currentDisplay: Ember.computed -> ''
+    currentDisplay: Ember.computed -> '&nbsp;'
     messages: Ember.computed ->
         [
             'Hello'
@@ -10,12 +10,17 @@ PageOneComponent = Ember.Component.extend
             'You might get something nice...'
         ]
 
-    showMessages: Ember.on 'init', ->
+    showMessages: Ember.on 'didInsertElement', ->
+        $pane = @$('.display-text')
         current = -1
         interval = window.setInterval =>
             current += 1
             if current < @get "messages.length"
                 @set 'currentDisplay', @get "messages.#{current}"
+                $pane.removeClass 'fadeout'
+                window.setTimeout =>
+                    $pane.addClass 'fadeout'
+                , 2000
             else
                 window.clearInterval interval
         , 3000
