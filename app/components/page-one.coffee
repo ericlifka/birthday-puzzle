@@ -1,4 +1,6 @@
-PageOneComponent = Ember.Component.extend
+`import RejectionsMixin from 'BirthdayPuzzle/mixins/rejections'`
+
+PageOneComponent = Ember.Component.extend RejectionsMixin,
     classNames: ['page-one']
 
     currentDisplay: Ember.computed -> 'Hello'
@@ -9,6 +11,8 @@ PageOneComponent = Ember.Component.extend
             'You might get something nice...'
             'First, what is your name?'
         ]
+
+    currentQuestion: Ember.computed -> 'name'
 
     showMessages: Ember.on 'didInsertElement', ->
         $pane = @$('.display-text')
@@ -32,5 +36,22 @@ PageOneComponent = Ember.Component.extend
 
         show()
         interval = window.setInterval updateMessage, 3000
+
+    actions:
+        processInput: ->
+            value = @get 'inputValue'
+            switch @get 'currentQuestion'
+                when 'name' then @processNameInput value
+
+    processNameInput: (name) ->
+        switch name.toUpperCase()
+            when 'PETER' then @showMessage "No, that's your son"
+            when 'POOKUMS', 'POOKUS' then @showMessage "No, that's your nickname"
+            when 'NICOLE' then @something()
+            else
+                @showMessage _.sample(@get 'rejections')
+
+    randomRejection: ->
+
 
 `export default PageOneComponent`

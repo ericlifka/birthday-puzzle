@@ -2,5 +2,8 @@
     <div class="display-text fadeout">
         {{currentDisplay}}
     </div>
-    {{input class="input-box"}}
+
+    <form {{action "processInput" on="submit" bubbles=false}}>
+        {{input class="input-box" value=inputValue}}
+    </form>
 </div>
