@@ -3,4 +3,8 @@ ApplicationController = Ember.Controller.extend
 
     pageOne: Ember.computed 'currentPage', -> 1 is @get 'currentPage'
 
+    actions:
+        pageDone: ->
+            @incrementProperty 'currentPage'
+
 `export default ApplicationController`

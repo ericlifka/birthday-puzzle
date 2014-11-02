@@ -54,7 +54,7 @@ PageOneComponent = Ember.Component.extend RejectionsMixin,
             when 'MERLIN', 'WAFFLES' then @showError "That's your cat"
             when 'MOLLY' then @showError "That's your puppy"
             when 'FUZZBOT' then @showError "That's your bunny"
-            when 'NICOLE' then @something()
+            when 'NICOLE' then @sendAction()
             else @showError _.sample(@get 'rejections')
 
     clearError: -> @set 'inputError', '&nbsp;'
