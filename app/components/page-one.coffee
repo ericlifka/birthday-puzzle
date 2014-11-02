@@ -8,21 +8,25 @@ PageOneComponent = Ember.Component.extend
             'This is a game'
             'Solve my riddles and crack my codes'
             'You might get something nice...'
+            'First, what is your name?'
         ]
 
     showMessages: Ember.on 'didInsertElement', ->
         $pane = @$('.display-text')
         current = -1
+        total = @get "messages.length"
         interval = window.setInterval =>
             current += 1
-            if current < @get "messages.length"
+            if current < total
                 @set 'currentDisplay', @get "messages.#{current}"
                 $pane.removeClass 'fadeout'
-                window.setTimeout =>
-                    $pane.addClass 'fadeout'
-                , 2000
+                if current < total - 1
+                    window.setTimeout =>
+                        $pane.addClass 'fadeout'
+                    , 2000
             else
                 window.clearInterval interval
+                @$('input.input-box').focus()
         , 3000
 
 `export default PageOneComponent`
