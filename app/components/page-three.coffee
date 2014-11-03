@@ -23,5 +23,14 @@ PageThreeComponent = Ember.Component.extend RejectionsMixin,
                 @set 'inputValue', ''
                 @set 'inputError', _.sample(@get 'rejections')
 
+    success: ->
+        @$('.clue').fadeOut()
+        @$('form').fadeOut()
+        window.setTimeout =>
+            @$('.container').append $('<div class="correct">Correct!</div>')
+            window.setTimeout =>
+                @sendAction()
+            , 1500
+        , 500
 
 `export default PageThreeComponent`
