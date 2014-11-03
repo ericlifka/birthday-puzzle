@@ -3,10 +3,14 @@
 </div>
 
 <div class="container">
+    <div class="indicator">
+        <span class="glyphicon glyphicon-ok hidden"></span>
+        <span class="glyphicon glyphicon-remove hidden"></span>
+    </div>
     <div class="month">
         {{#each month in months}}
             <button class="btn btn-default"
-                {{action "selectMonth" month}}
+                {{action "selectMonth" month bubbles=false}}
                 {{bind-attr id=month}}>
                 &nbsp;
             </button>
@@ -15,7 +19,7 @@
     <div class="day">
         {{#each day in days}}
             <button class="btn btn-default"
-                {{action "selectDay" day}}
+                {{action "selectDay" day bubbles=false}}
                 {{bind-attr id=day}}>
                 &nbsp;
             </button>
@@ -26,7 +30,7 @@
             <div class="group">
                 {{#each year in yearGroup}}
                     <button class="btn btn-default"
-                        {{action "selectYear" year}}
+                        {{action "selectYear" year bubbles=false}}
                         {{bind-attr id=year}}>
                         &nbsp;
                     </button>
