@@ -8,5 +8,8 @@
     <div>With ferocious teeth and cunning guile</div>
     <div>The beast does guard its treasure</div>
     <div>&nbsp;</div>
-
+    <form {{action "processInput" on="submit" bubbles=false}}>
+        <div class="input-error">{{{inputError}}}</div>
+        {{input class="input-box" value=inputValue}}
+    </form>
 </div>
