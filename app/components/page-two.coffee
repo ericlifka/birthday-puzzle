@@ -49,6 +49,17 @@ PageTwoComponent = Ember.Component.extend
 
     markRight: ->
         @$('.glyphicon-ok').removeClass 'hidden'
+        @$('.hint .message').css('opacity', '0.0')
+        window.setTimeout =>
+            @$('.container').fadeOut()
+            @$('.hint').append $('<span class="message">Correct!</span>')
+            window.setTimeout =>
+                @$('.hint').fadeOut()
+                window.setTimeout =>
+                    @sendAction()
+                , 500
+            , 500
+        , 500
 
     markWrong: ->
         icon = @$('.glyphicon-remove')
@@ -60,7 +71,5 @@ PageTwoComponent = Ember.Component.extend
     hideIcons: ->
         @$('.glyphicon-ok').addClass 'hidden'
         @$('.glyphicon-remove').addClass 'hidden'
-
-
 
 `export default PageTwoComponent`
