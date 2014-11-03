@@ -8,6 +8,9 @@ PageTwoComponent = Ember.Component.extend
 
     months: Ember.computed -> [1..12]
     days: Ember.computed -> [1..31]
+    years: Ember.computed ->
+        for i in [0..90] by 10
+            [i..(i+9)]
 
     actions:
         selectMonth: (month) ->
