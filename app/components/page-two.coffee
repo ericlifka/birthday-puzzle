@@ -14,14 +14,17 @@ PageTwoComponent = Ember.Component.extend
 
     actions:
         selectMonth: (month) ->
+            @set 'activeMonth', month
             @$(".month button").removeClass 'active'
             @$(".month button##{month}").addClass 'active'
 
         selectDay: (day) ->
+            @set 'activeDay', day
             @$(".day button").removeClass 'active'
             @$(".day button##{day}").addClass 'active'
 
         selectYear: (year) ->
+            @set 'activeYear', year
             @$(".year button").removeClass 'active'
             @$(".year button##{year}").addClass 'active'
 
