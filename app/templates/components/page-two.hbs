@@ -1,5 +1,11 @@
 <div class="hint">
     <span class="message">It's your day</span>
+    {{#if showKey}}
+        <div class='result-key'>
+            <div>Correct!</div>
+            <div>Reward key: {{key}}</div>
+        </div>
+    {{/if}}
 </div>
 
 <div class="container">

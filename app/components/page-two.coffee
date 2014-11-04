@@ -5,6 +5,8 @@ PageTwoComponent = Ember.Component.extend
     activeDay: null
     activeYear: null
 
+    key: '000-00-02'
+
     removeFade: Ember.on 'didInsertElement', ->
         window.setTimeout =>
             @$('.hint').addClass 'fadein'
@@ -50,16 +52,16 @@ PageTwoComponent = Ember.Component.extend
     markRight: ->
         @$('.glyphicon-ok').removeClass 'hidden'
         @$('.hint .message').css('opacity', '0.0')
+        @set 'showKey', true
+        @$('.container').fadeOut()
+
+#            @$('.hint').append $('<span class="message">Correct!</span>')
         window.setTimeout =>
-            @$('.container').fadeOut()
-            @$('.hint').append $('<span class="message">Correct!</span>')
+            @$().fadeOut()
             window.setTimeout =>
-                @$('.hint').fadeOut()
-                window.setTimeout =>
-                    @sendAction()
-                , 500
-            , 500
-        , 500
+                @sendAction()
+            , 1000
+        , 2000
 
     markWrong: ->
         icon = @$('.glyphicon-remove')
