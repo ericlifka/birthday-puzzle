@@ -3,7 +3,7 @@
 ###
     Scavenger hunt item #1
     location: under the dog bed in her cage
-    result key: 1A1CAF28
+    result key: 000-00-03 / placeholder until i sort out the final puzzle
 ###
 
 PageThreeComponent = Ember.Component.extend RejectionsMixin,
