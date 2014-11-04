@@ -1,3 +1,12 @@
+<div class="hint">
+    <span class="message">The family is more than the individual</span>
+    {{#if showKey}}
+        <div class='result-key'>
+            <div>Correct!</div>
+            <div>Reward key: {{key}}</div>
+        </div>
+    {{/if}}
+</div>
 <div class="puzzle-container">
     {{#each month in months}}
         <div class="month">
