@@ -3,6 +3,8 @@
 PageOneComponent = Ember.Component.extend RejectionsMixin,
     classNames: ['page-one']
 
+    key: 'placeholder1'
+
     currentDisplay: Ember.computed -> 'Hello'
     messages: Ember.computed ->
         [
