@@ -9,6 +9,8 @@
 PageThreeComponent = Ember.Component.extend RejectionsMixin,
     classNames: ['page-three']
 
+    key: Ember.computed -> '000-00-03'
+
     focusInput: Ember.on 'didInsertElement', -> @$('input').focus()
     inputError: Ember.computed -> '&nbsp;'
     inputValue: Ember.computed -> ''
@@ -16,7 +18,7 @@ PageThreeComponent = Ember.Component.extend RejectionsMixin,
     actions:
         processInput: ->
             input = @get 'inputValue'
-            if input.toUpperCase() is '1A1CAF28'
+            if input.toUpperCase() is @get 'key'
                 @set 'inputError', '&nbsp;'
                 @success()
             else
@@ -27,7 +29,8 @@ PageThreeComponent = Ember.Component.extend RejectionsMixin,
         @$('.clue').fadeOut()
         @$('form').fadeOut()
         window.setTimeout =>
-            @$('.container').append $('<div class="correct">Correct!</div>')
+#            @$('.container').append $('<div class="correct">Correct!</div>')
+            @set 'showKey', true
             window.setTimeout =>
                 @sendAction()
             , 1500

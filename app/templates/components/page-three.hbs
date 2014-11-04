@@ -14,4 +14,11 @@
         <div class="input-error">{{{inputError}}}</div>
         {{input class="input-box" value=inputValue}}
     </form>
+
+    {{#if showKey}}
+        <div class='result-key'>
+            <div>Correct!</div>
+            <div>Reward key: {{key}}</div>
+        </div>
+    {{/if}}
 </div>
