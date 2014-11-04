@@ -7,4 +7,10 @@
         <div class="input-error">{{{inputError}}}</div>
         {{input class="input-box" value=inputValue}}
     </form>
+
+    {{#if showKey}}
+        <div class='result-key'>
+            Reward key: {{key}}
+        </div>
+    {{/if}}
 </div>

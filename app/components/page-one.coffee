@@ -3,7 +3,7 @@
 PageOneComponent = Ember.Component.extend RejectionsMixin,
     classNames: ['page-one']
 
-    key: 'placeholder1'
+    key: '000-00-01'
 
     currentDisplay: Ember.computed -> 'Hello'
     messages: Ember.computed ->
@@ -66,6 +66,7 @@ PageOneComponent = Ember.Component.extend RejectionsMixin,
         @$("form").hide()
         @$('.display-text').addClass 'fadeout'
         window.setTimeout =>
+            @set 'showKey', true
             @set 'currentDisplay', "Good, now solve this puzzle"
             @$('.display-text').removeClass 'fadeout'
             window.setTimeout =>
