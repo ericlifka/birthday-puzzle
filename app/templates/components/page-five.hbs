@@ -1,0 +1,13 @@
+<div class="puzzle-container">
+    {{#each month in months}}
+        <div class="month">
+            {{#each day in month}}
+                <button class="btn btn-default"
+                    {{action "selectday" day bubbles=false}}
+                    {{bind-attr id=id}}>
+                    &nbsp;
+                </button>
+            {{/each}}
+        </div>
+    {{/each}}
+</div>
