@@ -12,8 +12,8 @@
         <div class="month">
             {{#each day in month}}
                 <div class="btn btn-default"
-                    {{action "selectday" day bubbles=false}}
-                    {{bind-attr id=id}}>
+                    {{action "selectDay" day bubbles=false}}
+                    {{bind-attr id=day.id}}>
                     &nbsp;
                 </div>
             {{/each}}
