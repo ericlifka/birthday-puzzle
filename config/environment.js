@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'birthday-puzzle',
     environment: environment,
-    baseURL: '/',
+    baseURL: '/birthday-puzzle',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
