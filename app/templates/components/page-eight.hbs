@@ -1,0 +1,23 @@
+<div class="hint">
+    {{#if showKey}}
+        <div class='result-key'>
+            <div>Correct!</div>
+            <div>Reward key: {{key}}</div>
+        </div>
+    {{else}}
+        <span class="message">As the family grows the whole becomes stronger</span>
+    {{/if}}
+</div>
+<div class="puzzle-container">
+    <div class="indicator">
+        <span class="glyphicon glyphicon-ok hidden"></span>
+        <span class="glyphicon glyphicon-remove hidden"></span>
+    </div>
+    {{#each year in years}}
+        <div class="btn btn-default year"
+            {{action "selectYear" year bubbles=false}}
+            {{bind-attr id=year}}>
+            &nbsp;
+        </div>
+    {{/each}}
+</div>

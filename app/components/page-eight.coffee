@@ -19,6 +19,8 @@ PageEightComponent = Ember.Component.extend
                 day: day
                 id: "#{pad(month+1)}-#{pad(day)}"
 
+    years: Ember.computed -> [0..99]
+
     actions:
         selectDay: (day) ->
             @$("##{day.id}").addClass 'active'
