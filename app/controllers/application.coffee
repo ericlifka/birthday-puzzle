@@ -13,6 +13,7 @@ ApplicationController = Ember.Controller.extend
     pageSix: Ember.computed 'currentPage', -> 6 is @get 'currentPage'
     pageSeven: Ember.computed 'currentPage', -> 7 is @get 'currentPage'
     pageEight: Ember.computed 'currentPage', -> 8 is @get 'currentPage'
+    pageNine: Ember.computed 'currentPage', -> 9 is @get 'currentPage'
 
     actions:
         pageDone: ->
