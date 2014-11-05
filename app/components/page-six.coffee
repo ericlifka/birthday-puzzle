@@ -2,7 +2,7 @@
 
 ###
     Scavenger hunt item #3
-    location: undecided
+    location: under the bed
     result key: 000-00-06 / placeholder until i sort out the final puzzle
 ###
 
