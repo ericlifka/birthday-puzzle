@@ -30,7 +30,7 @@ PageNineComponent = Ember.Component.extend RejectionsMixin,
         window.setTimeout ->
             $('.hint').append $('<div class="message">Dawww... I love you too!</div>')
             window.setTimeout ->
-                $('body').append $('<div class="the-end">THE END</div>')
+                $('body').append $('<div class="the-end">HAPPY BIRTHDAY!</div>')
             , 2000
         , 1000
 
