@@ -2,7 +2,7 @@
 
 ###
     Scavenger hunt item #4
-    location: undecided
+    location: washing machine
     result key: 000-00-07 / placeholder until i sort out the final puzzle
 ###
 
