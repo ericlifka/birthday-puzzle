@@ -7,26 +7,19 @@ PageEightComponent = Ember.Component.extend
     classNames: ['page-eight']
 
     key: '000-00-08'
-    selectedDays: null
-
+    selectedYears: null
+    
     setDefaults: Ember.on 'init', ->
-        @set 'selectedDays', []
-
-    months: Ember.computed ->
-        _.map [31, 27, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31], (length, month) ->
-            for day in [1..length]
-                month: month+1
-                day: day
-                id: "#{pad(month+1)}-#{pad(day)}"
+        @set 'selectedYears', []
 
     years: Ember.computed -> [0..99]
 
     actions:
-        selectDay: (day) ->
-            @$("##{day.id}").addClass 'active'
-            @get('selectedDays').pushObject day
+        selectYear: (year) ->
+            @$("##{year}").addClass 'active'
+            @get('selectedYears').pushObject year
 
-            if 3 is @get 'selectedDays.length'
+            if 4 is @get 'selectedYears.length'
                 if @checkCombination()
                     @success()
                 else
