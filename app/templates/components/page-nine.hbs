@@ -1,3 +1,10 @@
 <div class="hint">
-    Pride and Prejudice
+    <div class="message">Pride and Prejudice</div>
+</div>
+
+<div class="input-form">
+    <form {{action "processInput" on="submit" bubbles=false}}>
+        <div class="input-error">{{{inputError}}}</div>
+        {{input class="input-box" value=inputValue}}
+    </form>
 </div>
