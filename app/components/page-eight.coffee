@@ -8,7 +8,7 @@ PageEightComponent = Ember.Component.extend
 
     key: '000-00-08'
     selectedYears: null
-    
+
     setDefaults: Ember.on 'init', ->
         @set 'selectedYears', []
 
@@ -23,16 +23,13 @@ PageEightComponent = Ember.Component.extend
                 if @checkCombination()
                     @success()
                 else
-                    @$('.month .day').removeClass 'active'
-                    @set 'selectedDays', []
+                    @$('.puzzle-container .year').removeClass 'active'
+                    @set 'selectedYears', []
                     @showIcon 'remove'
 
     checkCombination: ->
-        [first, second, third] = _.sortBy @get('selectedDays'), "id"
-
-        first.month is 2 and first.day is 17 and
-            second.month is 11 and second.day is 6 and
-            third.month is 12 and third.day is 7
+        [first, second, third, fourth] = _.sortBy @get('selectedYears')
+        first is 12 and second is 15 and third is 87 and fourth is 88
 
     showIcon: (iconClass) ->
         @$(".indicator .glyphicon-#{iconClass}").removeClass 'hidden'
