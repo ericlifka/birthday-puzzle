@@ -5,7 +5,7 @@ PageTwoComponent = Ember.Component.extend
     activeDay: null
     activeYear: null
 
-    key: '000-00-02'
+    key: '212-2-1'
 
     removeFade: Ember.on 'didInsertElement', ->
         window.setTimeout =>

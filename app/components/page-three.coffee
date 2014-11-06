@@ -3,13 +3,13 @@
 ###
     Scavenger hunt item #1
     location: under the dog bed in her cage
-    result key: 000-00-03 / placeholder until i sort out the final puzzle
+    result key: 214-34-1
 ###
 
 PageThreeComponent = Ember.Component.extend RejectionsMixin,
     classNames: ['page-three']
 
-    key: Ember.computed -> '000-00-03'
+    key: Ember.computed -> '214-34-1'
 
     focusInput: Ember.on 'didInsertElement', -> @$('input').focus()
     inputError: Ember.computed -> '&nbsp;'

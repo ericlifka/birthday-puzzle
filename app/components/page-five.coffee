@@ -1,12 +1,12 @@
 pad = (num) -> if num < 10 then "0#{num}" else "#{num}"
 ###
     Combination: 3 birthdays
-    result key: 000-00-05
+    result key: 215-13-2
 ###
 PageFiveComponent = Ember.Component.extend
     classNames: ['page-five']
 
-    key: '000-00-05'
+    key: '215-13-2'
     selectedDays: null
 
     setDefaults: Ember.on 'init', ->

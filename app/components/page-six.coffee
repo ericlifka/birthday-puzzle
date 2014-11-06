@@ -3,13 +3,13 @@
 ###
     Scavenger hunt item #3
     location: under the bed
-    result key: 000-00-06 / placeholder until i sort out the final puzzle
+    result key: 211-3-4 / placeholder until i sort out the final puzzle
 ###
 
 PageSixComponent = Ember.Component.extend
     classNames: ['page-six']
 
-    key: Ember.computed -> '000-00-06'
+    key: Ember.computed -> '211-3-4'
 
     focusInput: Ember.on 'didInsertElement', -> @$('input').focus()
     inputError: Ember.computed -> '&nbsp;'

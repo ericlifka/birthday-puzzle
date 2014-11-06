@@ -1,12 +1,12 @@
 
 puzzles:
-name                        in      211-2-4
-birthday                    the     212-2-1
-scavenger hunt - dog        horse   214-34-1
-scavenger hunt             carriage 220-10-5
-3 birthdays                 within  215-13-2
-scavenger hunt              the     211-3-4
-scavenger hunt              glove   381-16-8
-4 birth years               boxes   330-7-10
+name                        in      211-2-4     01
+birthday                    the     212-2-1     02
+scavenger hunt - dog        horse   214-34-1    03
+scavenger hunt -table      carriage 220-10-5    04
+3 birthdays                 within  215-13-2    05
+scavenger hunt - bed        the     211-3-4     06
+scavenger hunt - washing    glove   381-16-8    07
+4 birth years               boxes   330-7-10    08
 code scavenger hunt
 treasure map
