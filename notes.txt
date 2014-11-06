@@ -1,12 +1,12 @@
 
 puzzles:
-name                        placeholder1
-birthday                    placeholder2
-scavenger hunt - dog        placeholder3
-scavenger hunt              placeholder4
-3 birthdays                 placeholder5
-scavenger hunt              placeholder6
-scavenger hunt              placeholder7
-4 birth years               placeholder8
+name                        in      211-2-4
+birthday                    the     212-2-1
+scavenger hunt - dog        horse   214-34-1
+scavenger hunt             carriage 220-10-5
+3 birthdays                 within  215-13-2
+scavenger hunt              the     211-3-4
+scavenger hunt              glove   381-16-8
+4 birth years               boxes   330-7-10
 code scavenger hunt
 treasure map
